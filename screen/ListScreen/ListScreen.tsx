@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { View } from "react-native";
 import { Link } from "expo-router";
 
@@ -11,13 +11,24 @@ import Button from "@/components/global/Button/Button";
 import { Product } from "@/types/products.types";
 
 const ListScreen: React.FC<Props> = (props) => {
-  const { data, isLoading } = useFetchProducts();
+  const { data, isLoading, isError } = useFetchProducts();
+  const [search, setSearch] = useState("");
+  const filteredData = useMemo(() => {
+    if (!search) return data;
+    return data?.filter((product) =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [data, search]);
 
   return (
     <View style={styles.listScreenStyle}>
-      <SearchInput />
+      <SearchInput onChangeText={setSearch} />
       <View style={styles.listScreenViewStyle}>
-        {data ? <ProductList products={data as Product[]} /> : null}
+        <ProductList
+          products={filteredData as Product[]}
+          isError={isError}
+          isLoading={isLoading}
+        />
       </View>
       <View style={styles.listScreenActionsStyle}>
         <Link href="/create" asChild>
