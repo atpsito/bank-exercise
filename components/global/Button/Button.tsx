@@ -1,5 +1,5 @@
-import React, { LegacyRef, forwardRef, useMemo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { forwardRef, useMemo } from "react";
+import { Text, TouchableOpacity } from "react-native";
 
 import { ButtonProps as Props } from "./Button.types";
 import styles from "./Button.styles";

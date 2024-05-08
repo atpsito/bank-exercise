@@ -1,17 +1,18 @@
 import { StyleSheet } from "react-native";
 
+import colors from "@/constants/Colors";
+
 const editScreenStyles = StyleSheet.create({
   editScreenStyle: {
+    flex: 1,
     backgroundColor: "white",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#999999",
-    paddingBottom: 16
+    padding: 24,
   },
-  editScreenText: {
-    fontSize: 20,
+  title: {
+    fontSize: 24,
     fontWeight: "bold",
-    color: "blue",
+    color: colors.secondary,
+    marginBottom: 24,
   },
 });
 

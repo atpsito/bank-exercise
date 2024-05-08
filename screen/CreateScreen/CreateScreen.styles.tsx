@@ -6,12 +6,12 @@ const createScreenStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     padding: 24,
-    justifyContent: "space-between",
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: colors.secondary,
+    marginBottom: 24,
   },
 });
 

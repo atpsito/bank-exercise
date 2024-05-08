@@ -9,7 +9,7 @@ const SearchInput: React.FC<Props> = (props) => {
 
   const onChangeText = (text: string) => {
     setValue(text);
-    // props.onChangeText(text);
+    props.onChangeText(text);
   };
 
   return (

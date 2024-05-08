@@ -4,7 +4,7 @@ import { Text, View, Image } from "react-native";
 import { DetailsScreenProps as Props } from "./DetailsScreen.types";
 import styles from "./DetailsScreen.styles";
 import Button from "@/components/global/Button/Button";
-import { useLocalSearchParams } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 import { useFetchProducts } from "@/services/products/products.service.hooks";
 import dayjs from "dayjs";
 
@@ -44,19 +44,23 @@ const DetailsScreen: React.FC<Props> = (props) => {
         <View style={styles.item}>
           <Text style={styles.itemTitle}>Fecha de liberación</Text>
           <Text style={styles.itemValue}>
-            {dayjs(date_release).format("DD/MM/YYYY")}
+            {dayjs(date_release).utc().format("DD/MM/YYYY")}
           </Text>
         </View>
         <View style={styles.item}>
           <Text style={styles.itemTitle}>Fecha revisión</Text>
           <Text style={styles.itemValue}>
-            {dayjs(date_revision).format("DD/MM/YYYY")}
+            {dayjs(date_revision).utc().format("DD/MM/YYYY")}
           </Text>
         </View>
       </View>
       <View style={styles.actions}>
-        <Button>Editar</Button>
-        <Button buttonType="DANGER">Eliminar</Button>
+        <Link href={`/(bank)/${productId}/edit`} asChild>
+          <Button>Editar</Button>
+        </Link>
+        <Link href={`/(bank)/${productId}/delete`} asChild>
+          <Button buttonType="DANGER">Eliminar</Button>
+        </Link>
       </View>
     </View>
   );
