@@ -1,4 +1,6 @@
 // Interfaces and types from component Header
 
 // Component Props
-export interface HeaderProps {}
+export interface HeaderProps {
+  canGoBack?: boolean;
+}

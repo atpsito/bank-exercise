@@ -9,7 +9,7 @@ export default function MainStackLayout() {
       screenOptions={{
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        header: () => <Header />,
+        header: (props) => <Header canGoBack={props.navigation.canGoBack()} />,
       }}
     >
       <Stack.Screen name="index" />

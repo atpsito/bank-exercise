@@ -9,8 +9,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.border1,
     paddingBottom: 16,
+    paddingHorizontal: 24,
+    flexDirection: "row",
   },
   headerText: {
+    flex: 1,
+    textAlign: "center",
     fontSize: 20,
     fontWeight: "bold",
     color: colors.secondary,
