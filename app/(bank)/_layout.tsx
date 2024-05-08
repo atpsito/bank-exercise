@@ -5,8 +5,6 @@ import { useColorScheme } from "@/components/useColorScheme";
 import Header from "@/components/global/Header/Header";
 
 export default function MainStackLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Stack
       screenOptions={{
@@ -16,7 +14,9 @@ export default function MainStackLayout() {
       }}
     >
       <Stack.Screen name="index" />
-      {/* <Stack.Screen name="two" /> */}
+      <Stack.Screen name="[productId]/details" />
+      <Stack.Screen name="[productId]/edit" />
+      <Stack.Screen name="create" />
     </Stack>
   );
 }
