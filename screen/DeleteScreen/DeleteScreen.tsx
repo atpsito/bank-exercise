@@ -14,7 +14,7 @@ const DeleteScreen: React.FC<Props> = (props) => {
   const { productId } = useLocalSearchParams();
   const { replace, back } = useRouter();
   const { data } = useFetchProducts();
-  const { mutateAsync: deleteProduct } = useDeleteProduct();
+  const { mutateAsync: deleteProduct, isPending } = useDeleteProduct();
   const product = useMemo(
     () => data?.find((product) => product.id === productId),
     [data, productId]
@@ -39,7 +39,7 @@ const DeleteScreen: React.FC<Props> = (props) => {
           </Text>
         </View>
         <View style={styles.actions}>
-          <Button buttonType="PRIMARY" onPress={deleteProductHandler}>
+          <Button buttonType="PRIMARY" onPress={deleteProductHandler} disabled={isPending}>
             Confirmar
           </Button>
           <Button onPress={back}>Cancelar</Button>
