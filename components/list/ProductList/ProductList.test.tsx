@@ -21,12 +21,25 @@ describe("ProductList", () => {
     );
   });
   it("renders with loading state", () => {
-    render(<ProductList products={[]} isError={false} isLoading={true} />);
+    const renderProps = render(
+      <ProductList products={[]} isError={false} isLoading={true} />
+    );
+
   });
   it("renders with error state", () => {
-    render(<ProductList products={[]} isError={true} isLoading={false} />);
+    const renderProps = render(
+      <ProductList products={[]} isError={true} isLoading={false} />
+    );
+    const { getByText } = renderProps;
+
+    expect(getByText("Ha ocurrido un error")).toBeTruthy();
   });
   it("renders with empty state", () => {
-    render(<ProductList products={[]} isError={false} isLoading={false} />);
+    const renderProps = render(
+      <ProductList products={[]} isError={false} isLoading={false} />
+    );
+    const { getByText } = renderProps;
+
+    expect(getByText("No hay elementos para mostrar")).toBeTruthy();
   });
 });

@@ -55,7 +55,6 @@ function RootLayoutNav() {
       <Providers>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(bank)" />
-          <Stack.Screen name="modal" options={{ presentation: "modal" }} />
         </Stack>
       </Providers>
     </ThemeProvider>
