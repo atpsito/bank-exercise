@@ -4,11 +4,11 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-
-import Providers from "@/components/global/Providers/Providers";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import utc from "dayjs/plugin/utc";
 import dayjs from "dayjs";
+
+import Providers from "@/components/global/Providers/Providers";
 
 export {
   // Catch any errors thrown by the Layout component.

@@ -16,7 +16,9 @@ const TextInput = forwardRef<RNTextInput, Props>((props, ref) => {
         {...restProps}
         style={[styles.input, style, disabledStyle]}
       />
-      <Text style={styles.error}>{error}</Text>
+      <Text style={styles.error} testID={label}>
+        {error}
+      </Text>
     </View>
   );
 });

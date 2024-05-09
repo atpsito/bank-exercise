@@ -84,6 +84,7 @@ const ProductForm: React.FC<Props> = (props) => {
                 editable={!product}
                 value={value}
                 error={error?.message}
+                placeholder="ID"
               />
             );
           }}
@@ -102,6 +103,7 @@ const ProductForm: React.FC<Props> = (props) => {
                 onChangeText={onChange}
                 value={value}
                 error={error?.message}
+                placeholder="Nombre"
               />
             );
           }}
@@ -120,6 +122,7 @@ const ProductForm: React.FC<Props> = (props) => {
                 onChangeText={onChange}
                 value={value}
                 error={error?.message}
+                placeholder="Descripción"
               />
             );
           }}
@@ -138,6 +141,7 @@ const ProductForm: React.FC<Props> = (props) => {
                 onChangeText={onChange}
                 value={value}
                 error={error?.message}
+                placeholder="Logo"
               />
             );
           }}
@@ -156,6 +160,7 @@ const ProductForm: React.FC<Props> = (props) => {
                 onChangeText={onChange}
                 value={value}
                 error={error?.message}
+                placeholder="Fecha Liberación"
               />
             );
           }}
@@ -175,6 +180,7 @@ const ProductForm: React.FC<Props> = (props) => {
                 value={value}
                 error={error?.message}
                 editable={false}
+                placeholder="Fecha Revisión"
               />
             );
           }}

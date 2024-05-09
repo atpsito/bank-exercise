@@ -1,10 +1,10 @@
 import React from "react";
 
-import EditScreen from "./EditScreen";
 import { render } from "@/setupTests";
+import ListScreenStack from "@/app/(bank)";
 
-describe("EditScreen", () => {
+describe("Home", () => {
   it("renders with default props", () => {
-    render(<EditScreen />);
+    render(<ListScreenStack />);
   });
 });
