@@ -4,7 +4,7 @@ This project is a React Native application using Expo, designed to simulate the 
 
 Here how is it work:
 
-![How it works](docs/react-native-demo.mp4)
+https://asset.cloudinary.com/dffiyylaf/421c4eaea6d29b7f52ebd6fafbe95a5d
 
 ## Technologies Used
 
